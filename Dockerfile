@@ -1,11 +1,12 @@
 FROM python:3.8-slim AS compile-image
-RUN git clone https://ujicobake102:hanhan18@github.com/ujicobake102/pluir /app
 WORKDIR /app
+
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends build-essential gcc git \
     && apt-get clean autoclean && rm -rf /var/lib/apt/lists/*
-
+RUN git clone https://ujicobake102:hanhan18@github.com/ujicobake102/pluir /app
+WORKDIR /app
 RUN pip3 install --ignore-installed distlib pipenv
 RUN python3 -m venv /app/venv
 
