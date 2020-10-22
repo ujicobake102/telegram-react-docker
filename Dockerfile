@@ -1,5 +1,5 @@
 FROM python:3.8-slim AS compile-image
-RUN git clone https://ujicobake102:hanhan18github.com/ujicobake102/pluir /app
+RUN git clone https://ujicobake102:hanhan18@github.com/ujicobake102/pluir /app
 WORKDIR /app
 
 RUN apt-get update \
